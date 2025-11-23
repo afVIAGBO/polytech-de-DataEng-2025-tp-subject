@@ -7,9 +7,21 @@ def get_paris_realtime_bicycle_data():
     
     url = "https://opendata.paris.fr/api/explore/v2.1/catalog/datasets/velib-disponibilite-en-temps-reel/exports/json"
     
+
     response = requests.request("GET", url)
     
     serialize_data(response.text, "paris_realtime_bicycle_data.json")
+
+#Ingestion des données de NANTES
+def get_Nantes_realtime_bicycle_data():
+    
+    url = "https://data.nantesmetropole.fr/api/explore/v2.1/catalog/datasets/244400404_stations-velos-libre-service-nantes-metropole-disponibilites/records?limit=20"
+    
+
+    response = requests.request("GET", url)
+    
+    serialize_data(response.text, "nantes_realtime_bicycle_data.json")
+
 
 def serialize_data(raw_json: str, file_name: str):
 
@@ -20,3 +32,17 @@ def serialize_data(raw_json: str, file_name: str):
     
     with open(f"data/raw_data/{today_date}/{file_name}", "w") as fd:
         fd.write(raw_json)
+
+
+
+def get_communes_data():
+    """
+    Récupère les données des communes françaises via l’API geo.api.gouv.fr
+    """
+    url = "https://geo.api.gouv.fr/communes?fields=nom,code,population,codeRegion,codeDepartement,surface,centre&format=json"
+    print(f"Récupération des données communes depuis : {url}")
+
+    response = requests.get(url)
+    response.raise_for_status()
+
+    serialize_data(response.text, "communes.json")

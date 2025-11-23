@@ -223,7 +223,7 @@ FROM DIM_STATION ds JOIN (
 ) AS tmp ON ds.id = tmp.station_id;
 ```
 
-Vous pouvez utiliser la commande `duckdb data/duckdb/mobility_analysis.duckdb` pour ouvrir l'invite de commande DuckDB. 
+Vous pouvez utiliser la commande './duckdb data/duckdb/mobility_analysis.duckdb' pour ouvrir l'invite de commande DuckDB. 
 
 Le sujet devra être rendu sous la forme d'un repository GitHub avec les instructions nécéssaire pour faire fonctionner correctement le projet. Le projet peut être fait seul ou en duo.
 
