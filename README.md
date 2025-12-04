@@ -14,7 +14,7 @@ Pour faire fonctionner ce sujet, c'est assez simple:
 
 curl https://install.duckdb.org | sh
 
-git clone https://github.com/kevinl75/polytech-de-101-2025-tp-subject.git
+git clone https://github.com/afVIAGBO/polytech-de-DataEng-2025-tp-subject.git
 
 cd polytech-de-101-2025-tp-subject
 
