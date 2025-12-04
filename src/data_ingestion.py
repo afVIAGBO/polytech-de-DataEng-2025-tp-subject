@@ -15,7 +15,7 @@ def get_paris_realtime_bicycle_data():
 #Ingestion des données de NANTES
 def get_Nantes_realtime_bicycle_data():
     
-    url = "https://data.nantesmetropole.fr/api/explore/v2.1/catalog/datasets/244400404_stations-velos-libre-service-nantes-metropole-disponibilites/records?limit=20"
+    url = "https://data.nantesmetropole.fr/api/explore/v2.1/catalog/datasets/244400404_stations-velos-libre-service-nantes-metropole-disponibilites/records?limit=100"
     
 
     response = requests.request("GET", url)
